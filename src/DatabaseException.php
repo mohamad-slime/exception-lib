@@ -8,7 +8,9 @@
  * @package Src
  */
 
-namespace Src;
+namespace ExceptionLib;
+
+use ExceptionLib\CustomException;
 
 class DatabaseException extends CustomException
 {

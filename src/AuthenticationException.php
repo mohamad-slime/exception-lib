@@ -5,10 +5,10 @@
  * Exception thrown for authentication-related errors, such as invalid credentials or unauthorized access attempts.
  * Stores the username involved in the authentication process and provides formatted error messages.
  *
- * @package Src
+ * @package ExceptionLib
  */
 
-namespace Src;
+namespace ExceptionLib;
 
 class AuthenticationException extends CustomException
 {

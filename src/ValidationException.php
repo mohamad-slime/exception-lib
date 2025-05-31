@@ -8,7 +8,7 @@
  * @package Src
  */
 
-namespace Src;
+namespace ExceptionLib;
 
 class ValidationException extends CustomException
 {

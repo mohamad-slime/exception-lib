@@ -8,7 +8,7 @@
  * @package Src
  */
 
-namespace Src;
+namespace ExceptionLib;
 
 class CustomException extends \Exception
 {

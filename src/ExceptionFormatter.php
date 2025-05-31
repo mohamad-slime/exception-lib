@@ -8,8 +8,9 @@
  * @package Src
  */
 
-namespace Src;
+namespace ExceptionLib;
 
+use ExceptionLib\ExceptionFormatterInterface;
 
 class ExceptionFormatter implements ExceptionFormatterInterface
 {
