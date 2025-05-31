@@ -10,10 +10,17 @@
 
 namespace ExceptionLib;
 
+use Monolog\Logger;
+
 class CustomException extends \Exception
 {
 
     protected array $additionalData;
+
+    /**
+     * @var Logger|null Monolog logger instance for logging exception details.
+     */
+    protected static ?Logger $logger = null;
 
     /**
      * CustomException constructor.
@@ -41,5 +48,32 @@ class CustomException extends \Exception
     public function getAdditionalData(): array
     {
         return $this->additionalData;
+    }
+
+    /**
+     * Set a Monolog logger instance to be used by all CustomException objects.
+     *
+     * @param Logger $logger The Monolog logger instance.
+     */
+    public static function setLogger(Logger $logger): void
+    {
+        self::$logger = $logger;
+    }
+
+    /**
+     * Log the exception details using Monolog, if a logger is set.
+     *
+     * @param array $context Optional context data to include in the log.
+     * @return void
+     */
+    public function log(array $context = []): void
+    {
+        if (self::$logger) {
+            self::$logger->error($this->getMessage(), array_merge([
+                'exception' => $this,
+                'code' => $this->getCode(),
+                'additionalData' => $this->getAdditionalData(),
+            ], $context));
+        }
     }
 }
