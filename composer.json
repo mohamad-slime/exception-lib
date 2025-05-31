@@ -1,0 +1,17 @@
+{
+  "name": "mohamad-slime/exception-lib",
+  "autoload": {
+    "psr-4": {
+      "ExceptionLib\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "mohamad-slime",
+      "email": "mohamadamin_dastmozdraki@outlook.com"
+    }
+  ],
+  "require": {
+    "monolog/monolog": "^3.9"
+  }
+}
